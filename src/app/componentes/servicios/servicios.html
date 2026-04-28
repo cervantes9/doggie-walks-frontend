@@ -1,0 +1,22 @@
+<section class="servicios-seccion">
+  <div class="container">
+    <h2 class="texto-titulo">Nuestros Servicios</h2>
+    <p class="texto-subtitulo">Elige el paseo perfecto para tu mejor amigo</p>
+
+    <div class="row">
+      @for (servicio of listaServicios$ | async; track servicio.id) {
+        <div class="col-md-4">
+          <div class="card tarjeta-servicio">
+            <div class="card-body">
+              <h5 class="card-title">{{ servicio.titulo }}</h5>
+              <p class="card-text">{{ servicio.descripcion }}</p>
+              <p class="duracion">⏱ {{ servicio.duracionMinutos }} minutos</p>
+              <p class="precio">💲 {{ servicio.precio }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
