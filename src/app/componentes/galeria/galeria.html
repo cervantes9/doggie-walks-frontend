@@ -1,1 +1,28 @@
-<p>galeria works!</p>
+<section class="galeria-seccion">
+  <div class="container-fluid px-4">
+    <h2 class="texto-titulo">Galería de Perritos</h2>
+    <p class="texto-subtitulo">Momentos felices con nuestros amigos de cuatro patas</p>
+
+    <div class="cuadricula-fotos">
+      @for (foto of fotos; track foto.id) {
+        <div>
+          <div class="foto-contenedor" (click)="abrirFoto(foto.id)">
+            <img [src]="foto.url" [alt]="foto.alt">
+          </div>
+        </div>
+      }
+    </div>
+
+    @if (fotoSeleccionada !== -1) {
+      <div class="modal-fondo" (click)="cerrarFoto()">
+        <button class="flecha flecha-izquierda" (click)="$event.stopPropagation(); fotoAnterior()">❮</button>
+        <div class="modal-contenido">
+          <img [src]="fotos[fotoSeleccionada].url" [alt]="fotos[fotoSeleccionada].alt">
+        </div>
+        <button class="flecha flecha-derecha" (click)="$event.stopPropagation(); fotoSiguiente()">❯</button>
+        <button class="boton-cerrar" (click)="cerrarFoto()">✕</button>
+      </div>
+    }
+
+  </div>
+</section>
