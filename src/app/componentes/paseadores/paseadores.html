@@ -1,1 +1,27 @@
-<p>paseadores works!</p>
+<section class="paseadores-seccion">
+  <div class="container">
+    <h2 class="texto-titulo">Nuestro Equipo</h2>
+    <p class="texto-subtitulo">Profesionales apasionados por el cuidado de tu mascota</p>
+
+    <div class="row">
+      @for (paseador of listaPaseadores$ | async; track paseador.id) {
+        <div class="col-md-6">
+          <div class="card tarjeta-paseador">
+            <div class="card-body">
+              <div class="foto-contenedor">
+                <img src="https://ui-avatars.com/api/?name={{ paseador.nombre }}&background=2c7a4b&color=fff&size=100" 
+                     alt="Foto de {{ paseador.nombre }}"
+                     class="foto-paseador">
+              </div>
+              <h5 class="card-title">{{ paseador.nombre }}</h5>
+              <p class="experiencia">🐾 {{ paseador.experienciaAnos }} años de experiencia</p>
+              <p class="card-text">{{ paseador.descripcionPerfil }}</p>
+              <p class="certificaciones">🏅 {{ paseador.certificaciones }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

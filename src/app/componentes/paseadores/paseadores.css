@@ -1,0 +1,60 @@
+.paseadores-seccion {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.texto-titulo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c7a4b;
+  margin-bottom: 10px;
+}
+
+.texto-subtitulo {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+.tarjeta-paseador {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tarjeta-paseador:hover {
+  transform: translateY(-5px);
+}
+
+.foto-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.foto-paseador {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.card-title {
+  color: #2c7a4b;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.experiencia {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.certificaciones {
+  color: #2c7a4b;
+  font-weight: bold;
+}

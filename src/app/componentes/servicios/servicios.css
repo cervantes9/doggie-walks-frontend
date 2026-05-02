@@ -1,0 +1,47 @@
+.servicios-seccion {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.texto-titulo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c7a4b;
+  margin-bottom: 10px;
+}
+
+.texto-subtitulo {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 40px;
+}
+
+.tarjeta-servicio {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: #2c7a4b;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.duracion {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.precio {
+  color: #2c7a4b;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
