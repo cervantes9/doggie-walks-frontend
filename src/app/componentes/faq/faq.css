@@ -1,0 +1,67 @@
+/* Espaciado general de la sección */
+.faq-seccion {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Un fondo gris súper claro para que resalte la caja blanca */
+}
+
+/* Estilo para los títulos de la sección */
+.texto-titulo {
+    color: #2c7a4b; /* Azul oscuro corporativo (parecido al del header) */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.texto-subtitulo {
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* --- ESTILOS PERSONALIZADOS PARA EL ACORDEÓN DE BOOTSTRAP --- */
+
+/* Quitar los bordes feos por defecto del acordeón */
+.accordion {
+    --bs-accordion-border-color: transparent;
+    --bs-accordion-bg: transparent;
+}
+
+/* Estilo para cada "cajita" de pregunta */
+.accordion-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px !important; /* Bordes redondeados */
+    margin-bottom: 15px; /* Separación entre preguntas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para efecto 3D */
+    overflow: hidden; /* Para que los bordes redondeados se mantengan */
+}
+
+/* Estilo del botón (La pregunta en sí) */
+.accordion-button {
+    font-weight: 600;
+    color: #333;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Color del botón cuando la pregunta ESTÁ ABIERTA */
+.accordion-button:not(.collapsed) {
+    color: #0056b3; /* Azul más vivo */
+    background-color: #e6f2ff; /* Fondo celeste muy clarito */
+    box-shadow: none; /* Quitamos la sombra azul intensa por defecto de Bootstrap */
+}
+
+/* Cambiar el color de la flechita cuando se hace clic (opcional, quita el borde azul de selección) */
+.accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* El texto de la respuesta */
+.accordion-body {
+    color: #555;
+    line-height: 1.6;
+    padding: 20px;
+    border-top: 1px solid #eee; /* Línea sutil separando pregunta de respuesta */
+}
