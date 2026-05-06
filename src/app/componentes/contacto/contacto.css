@@ -1,0 +1,31 @@
+/* Color de fondo sutil para toda la sección */
+.contacto-seccion {
+    background-color: #fcfcfc;
+}
+
+/* Estilo para los circulitos de los iconos */
+.icono-contacto {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    flex-shrink: 0; /* Evita que el círculo se aplaste en móviles */
+}
+
+/* Ajustes sutiles para los inputs del formulario */
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease;
+}
+
+/* Efecto cuando haces clic en un input */
+.form-control:focus {
+    border-color: #2c7a4b; /* Color azul primary de Bootstrap */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Bordes redondeados para el botón principal */
+.btn {
+    border-radius: 8px;
+}

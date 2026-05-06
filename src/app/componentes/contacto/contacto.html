@@ -1,1 +1,113 @@
-<p>contacto works!</p>
+<section class="contacto-seccion py-5">
+  <div class="container">
+
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h2 class="fw-bold text-primary">Contáctanos</h2>
+        <p class="text-muted">¿Tienes dudas o quieres programar un paseo? Escríbenos.</p>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <div class="col-lg-7">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h4 class="mb-4">Envíanos un mensaje</h4>
+
+            <form (ngSubmit)="enviarMensaje()">
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="nombre" class="form-label">Nombre completo</label>
+                  <input type="text" class="form-control" id="nombre"
+                         placeholder="Ej. Juan Pérez"
+                         [(ngModel)]="nombre" name="nombre" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="tel" class="form-control" id="telefono"
+                         placeholder="Ej. +54 9 11 1234 5678"
+                         [(ngModel)]="telefono" name="telefono" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email"
+                       placeholder="juan@ejemplo.com"
+                       [(ngModel)]="email" name="email" required>
+              </div>
+
+              <div class="mb-4">
+                <label for="mensaje" class="form-label">¿En qué podemos ayudarte?</label>
+                <textarea class="form-control" id="mensaje" rows="5"
+                          placeholder="Cuéntanos sobre tu mascota y qué tipo de paseo buscas..."
+                          [(ngModel)]="mensaje" name="mensaje" required></textarea>
+              </div>
+
+              @if (mensajeExito) {
+                <div class="alert alert-success">{{ mensajeExito }}</div>
+              }
+
+              @if (mensajeError) {
+                <div class="alert alert-danger">{{ mensajeError }}</div>
+              }
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="info-contacto p-4 rounded bg-light h-100">
+          <h4 class="mb-4">Información Directa</h4>
+
+          <div class="mb-4 d-flex align-items-start">
+            <div class="icono-contacto bg-primary text-white rounded-circle me-3 d-flex justify-content-center align-items-center">
+              📍
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Área de Servicio</h6>
+              <p class="text-muted mb-0">Ciudad Autónoma de Buenos Aires y alrededores.</p>
+            </div>
+          </div>
+
+          <div class="mb-4 d-flex align-items-start">
+            <div class="icono-contacto bg-primary text-white rounded-circle me-3 d-flex justify-content-center align-items-center">
+              📞
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Llámanos</h6>
+              <p class="text-muted mb-0">+54 9 11 9876 5432</p>
+            </div>
+          </div>
+
+          <div class="mb-4 d-flex align-items-start">
+            <div class="icono-contacto bg-primary text-white rounded-circle me-3 d-flex justify-content-center align-items-center">
+              ✉️
+            </div>
+            <div>
+              <h6 class="fw-bold mb-1">Correo Electrónico</h6>
+              <p class="text-muted mb-0">hola&#64;doggiewalks.com</p>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h6 class="fw-bold mb-3">Síguenos en nuestras redes:</h6>
+          <div class="redes-sociales">
+            <a href="#" class="btn btn-outline-primary btn-sm me-2">👍 Facebook</a>
+            <a href="#" class="btn btn-outline-primary btn-sm me-2">📸 Instagram</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
