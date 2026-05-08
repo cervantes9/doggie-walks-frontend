@@ -1,27 +1,80 @@
-<section class="paseadores-seccion">
+<section class="paseadores-seccion py-5 flex-grow-1">
   <div class="container">
-    <h2 class="texto-titulo">Nuestro Equipo</h2>
-    <p class="texto-subtitulo">Profesionales apasionados por el cuidado de tu mascota</p>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold titulo-oscuro">Nuestro Equipo</h2>
+      <p class="text-muted">Profesionales apasionados por el cuidado de tu mascota</p>
+    </div>
 
-    <div class="row">
-      @for (paseador of listaPaseadores$ | async; track paseador.id) {
-        <div class="col-md-6">
-          <div class="card tarjeta-paseador">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Bucle para dibujar a cada paseador -->
+      @for (paseador of listaPaseadores$ | async; track paseador.id)  {
+        <div class="col-md-5 col-lg-4">
+          
+          <!-- LA TARJETA (Al hacer clic, abre el Modal) -->
+          <div class="card h-100 shadow-sm border-0 tarjeta-equipo text-center cursor-pointer" 
+               data-bs-toggle="modal" 
+               [attr.data-bs-target]="'#modalPaseador' + paseador.id">
+            
+            <div class="mt-4">
+              <!-- Si no tienes fotos en la BD aún, usaremos esta genérica por ahora -->
+              <img [src]="paseador.fotoUrl"
+                   class="rounded-circle foto-perfil" 
+                   [alt]="paseador.nombre">
+            </div>
+            
             <div class="card-body">
-              <div class="foto-contenedor">
-                <img src="https://ui-avatars.com/api/?name={{ paseador.nombre }}&background=2c7a4b&color=fff&size=100" 
-                     alt="Foto de {{ paseador.nombre }}"
-                     class="foto-paseador">
-              </div>
-              <h5 class="card-title">{{ paseador.nombre }}</h5>
-              <p class="experiencia">🐾 {{ paseador.experienciaAnos }} años de experiencia</p>
-              <p class="card-text">{{ paseador.descripcionPerfil }}</p>
-              <p class="certificaciones">🏅 {{ paseador.certificaciones }}</p>
+              <h4 class="card-title fw-bold titulo-oscuro mb-1">{{ paseador.nombre }}</h4>
+              <p class="text-success fw-semibold mb-3">
+                <small>⭐ {{ paseador.experienciaAnos }} años de experiencia</small>
+              </p>
+              
+              <!-- El texto se corta a las 2 líneas en la vista previa -->
+              <p class="card-text text-muted line-clamp-2">{{ paseador.descripcionPerfil }}</p>
+            </div>
+            
+            <div class="card-footer bg-white border-0 pb-4">
+              <span class="text-primary fw-bold" style="font-size: 0.9rem;">Ver perfil completo ➝</span>
             </div>
           </div>
         </div>
-      }
-    </div>
 
+        <!-- EL POP-UP (Modal) OCULTO PARA ESTE PASEADOR -->
+        <div class="modal fade" [id]="'modalPaseador' + paseador.id" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+              
+              <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="modal-body text-center pt-0 px-5 pb-5">
+                <img  [src]="paseador.fotoUrl"
+                     class="rounded-circle foto-modal mb-3 shadow-sm" 
+                     [alt]="paseador.nombre">
+                
+                <h3 class="fw-bold titulo-oscuro">{{ paseador.nombre }}</h3>
+                
+                <!-- Mostramos la certificación en una "pastilla" verde -->
+                <span class="badge bg-success mb-3 p-2 text-white">{{ paseador.certificaciones }}</span>
+                
+                <!-- Aquí sí mostramos el texto completo -->
+                <p class="text-muted text-start mt-3">{{ paseador.bioMarketing }}</p>
+                
+                <div class="d-grid mt-4">
+                  <!-- El botón cierra el pop-up y te manda a contacto -->
+                  <button class="btn btn-warning fw-bold" data-bs-dismiss="modal" routerLink="/contacto">
+                    Solicitar paseo con {{ paseador.nombre }}
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Fin del Modal -->
+      }
+
+    </div>
   </div>
 </section>

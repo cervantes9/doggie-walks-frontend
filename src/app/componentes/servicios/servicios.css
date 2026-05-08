@@ -1,47 +1,40 @@
+/* 1. EL ARREGLO DEL ESPACIO BLANCO (Igual que en inicio) */
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
 .servicios-seccion {
-  padding: 60px 0;
-  background-color: #f8f9fa;
+    background-color: #fcfcfc; /* Un fondo súper sutil para separar del blanco puro */
+    flex-grow: 1; /* Esto empuja el footer hacia abajo */
 }
 
-.texto-titulo {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2c7a4b;
-  margin-bottom: 10px;
-}
-
-.texto-subtitulo {
-  text-align: center;
-  color: #6c757d;
-  margin-bottom: 40px;
+/* 2. LOS NUEVOS COLORES (Adiós al exceso de verde) */
+.titulo-oscuro {
+    color: #212529; /* Un gris casi negro, muy elegante */
 }
 
 .tarjeta-servicio {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden; /* Para que la foto respete las esquinas redondas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Un pequeño efecto para que la tarjeta salte al pasar el mouse */
 .tarjeta-servicio:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-.card-title {
-  color: #2c7a4b;
-  font-weight: bold;
-  font-size: 1.2rem;
+/* La imagen del perrito */
+.imagen-perro {
+    height: 440px;
+    object-fit: cover; /* Asegura que la foto no se deforme */
 }
 
-.duracion {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
-.precio {
-  color: #2c7a4b;
-  font-weight: bold;
-  font-size: 1.1rem;
+/* El precio lo ponemos del color Marrón Arcilla que usamos en la barra */
+.precio-destacado {
+    color: #bc6c25;
 }

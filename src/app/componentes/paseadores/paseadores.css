@@ -1,60 +1,56 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
 .paseadores-seccion {
-  padding: 60px 0;
-  background-color: #ffffff;
+    background-color: #fcfcfc;
 }
 
-.texto-titulo {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2c7a4b;
-  margin-bottom: 10px;
+.titulo-oscuro {
+    color: #212529;
 }
 
-.texto-subtitulo {
-  text-align: center;
-  color: #6c757d;
-  margin-bottom: 40px;
+/* Diseño de la tarjeta del equipo */
+.tarjeta-equipo {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tarjeta-paseador {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-bottom: 30px;
-  text-align: center;
+/* Efecto al pasar el ratón */
+.tarjeta-equipo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-.tarjeta-paseador:hover {
-  transform: translateY(-5px);
+.cursor-pointer {
+    cursor: pointer;
 }
 
-.foto-contenedor {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  margin-top: 10px;
+/* Estilos para que la foto de perfil sea redonda y perfecta */
+.foto-perfil {
+      width: 140px;
+    height: 140px;
+    object-fit: cover;
+    object-position: top;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.foto-paseador {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.foto-modal {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid #fff;
 }
 
-.card-title {
-  color: #2c7a4b;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.experiencia {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
-.certificaciones {
-  color: #2c7a4b;
-  font-weight: bold;
+/* Truco para cortar el texto si es muy largo y ponerle "..." */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

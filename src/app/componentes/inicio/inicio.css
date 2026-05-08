@@ -1,14 +1,32 @@
+/* 1. Le decimos a la etiqueta invisible de Angular (<app-inicio>) 
+      que se comporte como un contenedor flexible y se estire al máximo */
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* 2. Tu clase Hero limpia (Sin el calc manual) */
 .hero {
   background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  
+  /* BORRAMOS EL MIN-HEIGHT MANUAL */
+  /* min-height: calc(100vh - 335px); */
+
+  /* AGREGAMOS ESTO: Ahora se estira automáticamente gracias al :host de arriba */
+  flex-grow: 1; 
+  width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+/* El resto de tu código queda exactamente igual */
 .hero-contenido {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 40px;

@@ -1,0 +1,57 @@
+/* --- 1. ARREGLO DEL SCROLL GLOBAL --- */
+/* NOTA: Para que esto funcione perfecto, asegúrate de pegar esta regla también en tu archivo global "src/styles.css" */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- 2. DISEÑO DE LA BARRA DE NAVEGACIÓN --- */
+
+.navbar-doggie {
+    background-color: #2c4c3b; 
+    padding: 15px 0; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.navbar-brand {
+    font-family: 'Nunito', 'Segoe UI', sans-serif; 
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    letter-spacing: 1px; 
+}
+
+.nav-link {
+    color: #fefae0 !important; 
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 10px; 
+    transition: all 0.3s ease; 
+}
+
+.nav-link:hover {
+    color: #bc6c25 !important; 
+    transform: translateY(-2px); 
+}
+
+/* --- 3. DISEÑO DEL FOOTER --- */
+.footer-doggie {
+    background-color: #2c4c3b; 
+    color: #fefae0; 
+    border-top: 5px solid #bc6c25; 
+}
+
+.footer-link {
+    color: #fefae0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #bc6c25;
+}
+
+.copyright-bar {
+    background-color: rgba(0, 0, 0, 0.2);
+}
