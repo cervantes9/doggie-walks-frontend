@@ -1,0 +1,44 @@
+.reservas-seccion {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+.titulo-verde {
+  color: #2c7a4b;
+}
+
+.card {
+  border-radius: 16px;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #2c7a4b;
+  box-shadow: 0 0 0 0.25rem rgba(44, 122, 75, 0.15);
+}
+
+.form-label {
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.btn-warning {
+  background-color: #f5a623;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e09415;
+  transform: translateY(-2px);
+}

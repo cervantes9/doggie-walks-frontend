@@ -1,58 +1,63 @@
-/* Espaciado general de la sección */
-.faq-seccion {
-    padding: 60px 0;
-    background-color: #f9f9f9; /* Un fondo gris súper claro para que resalte la caja blanca */
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
 }
 
-/* Estilo para los títulos de la sección */
+.faq-seccion {
+    padding: 60px 0;
+    background-color: #fcfcfc; /* Fondo súper sutil */
+    flex-grow: 1;
+}
+
+/* --- 2. TÍTULOS --- */
 .texto-titulo {
-    color: #2c7a4b; /* Azul oscuro corporativo (parecido al del header) */
+    color: #2c4c3b; /* Verde corporativo */
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;
 }
 
 .texto-subtitulo {
-    color: #666;
+    color: #6c757d;
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.1rem;
 }
 
-/* --- ESTILOS PERSONALIZADOS PARA EL ACORDEÓN DE BOOTSTRAP --- */
+/* --- 3. ESTILOS DEL ACORDEÓN (Adiós al azul) --- */
 
-/* Quitar los bordes feos por defecto del acordeón */
 .accordion {
-    --bs-accordion-border-color: transparent;
+    --bs-accordion-border-color: #eaeaea;
     --bs-accordion-bg: transparent;
 }
 
-/* Estilo para cada "cajita" de pregunta */
+/* Diseño de cada tarjeta de pregunta */
 .accordion-item {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    border-radius: 10px !important; /* Bordes redondeados */
-    margin-bottom: 15px; /* Separación entre preguntas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para efecto 3D */
-    overflow: hidden; /* Para que los bordes redondeados se mantengan */
+    border-radius: 10px !important; 
+    margin-bottom: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03); /* Sombra súper suave */
+    overflow: hidden; 
 }
 
-/* Estilo del botón (La pregunta en sí) */
+/* La pregunta (cerrada) */
 .accordion-button {
     font-weight: 600;
-    color: #333;
+    color: #212529;
     padding: 20px;
-    background-color: #ffffff;
 }
 
-/* Color del botón cuando la pregunta ESTÁ ABIERTA */
+/* LA PREGUNTA (ABIERTA) - Aquí matamos el azul */
 .accordion-button:not(.collapsed) {
-    color: #0056b3; /* Azul más vivo */
-    background-color: #e6f2ff; /* Fondo celeste muy clarito */
-    box-shadow: none; /* Quitamos la sombra azul intensa por defecto de Bootstrap */
+    color: #2c4c3b; /* Texto Verde oscuro corporativo */
+    background-color: #f0f4f2; /* Fondo verde MUY pastel/grisáceo */
+    box-shadow: none; /* Quita la sombra azul intensa de Bootstrap */
 }
 
-/* Cambiar el color de la flechita cuando se hace clic (opcional, quita el borde azul de selección) */
+/* Quitar el borde azul feo que sale al hacer clic (focus) */
 .accordion-button:focus {
     border-color: transparent;
     box-shadow: none;
@@ -63,5 +68,5 @@
     color: #555;
     line-height: 1.6;
     padding: 20px;
-    border-top: 1px solid #eee; /* Línea sutil separando pregunta de respuesta */
+    border-top: 1px solid #f0f4f2; /* Línea separadora sutil */
 }

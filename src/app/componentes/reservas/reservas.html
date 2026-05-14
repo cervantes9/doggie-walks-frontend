@@ -1,0 +1,156 @@
+<section class="reservas-seccion py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold titulo-verde">Reserva tu Paseo 🐾</h2>
+      <p class="text-muted">Completa el formulario y nos pondremos en contacto para confirmar</p>
+    </div>
+
+    @if (mensajeError) {
+  <div class="alert alert-danger text-center">{{ mensajeError }}</div>
+        }
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-5">
+
+            <form novalidate>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">Nombre completo</label>
+                  <input type="text" class="form-control"
+                         [(ngModel)]="nombreCliente"
+                         name="nombreCliente"
+                         placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">Teléfono</label>
+                  <input type="tel" class="form-control"
+                         [(ngModel)]="telefono"
+                         name="telefono"
+                         placeholder="Ej. +54 9 11 1234 5678"
+                         required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold">Correo electrónico</label>
+                <input type="email" class="form-control"
+                       [(ngModel)]="email"
+                       name="email"
+                       placeholder="juan@ejemplo.com" required>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label fw-bold">Tipo de paseo</label>
+                  <select class="form-select"
+                          [(ngModel)]="tipoPaseo"
+                          name="tipoPaseo" required>
+                    <option value="">Selecciona...</option>
+                    <option value="Paseo Corto">Paseo Corto (30 min)</option>
+                    <option value="Paseo Largo">Paseo Largo (60 min)</option>
+                    <option value="Paseo VIP">Paseo VIP (45 min)</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label fw-bold">Fecha</label>
+                  <input type="date" class="form-control"
+                         [(ngModel)]="fecha"
+                         name="fecha"
+                         [min]="fechaMinima" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-bold">Hora</label>
+                    <select class="form-select"
+                         [(ngModel)]="hora"
+                          name="hora" required>
+                        <option value="">Selecciona hora...</option>
+                        <option value="07:00">7:00 AM</option>
+                         <option value="08:00">8:00 AM</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        </select>
+                  </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold">Paseador preferido</label>
+                <select class="form-select"
+                        [(ngModel)]="idPaseador"
+                        name="idPaseador">
+                  <option [value]="0">Sin preferencia</option>
+                  @for (paseador of listaPaseadores$ | async; track paseador.id) {
+                    <option [value]="paseador.id">{{ paseador.nombre }}</option>
+                  }
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-bold">Cuéntanos sobre tu perro</label>
+                <textarea class="form-control" rows="4"
+                          [(ngModel)]="mensaje"
+                          name="mensaje"
+                          placeholder="Raza, edad, si tiene alguna necesidad especial..."></textarea>
+              </div>
+
+              <div class="d-grid">
+               <button type="button" 
+                  class="btn btn-warning btn-lg fw-bold"
+                   (click)="validarYMostrarModal()"
+                    [disabled]="enviando">
+                      Confirmar Reserva 🐾
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">¿Confirmar reserva?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted">Por favor verifica que tus datos sean correctos antes de confirmar:</p>
+        <ul class="list-unstyled">
+          <li><strong>Nombre:</strong> {{ nombreCliente }}</li>
+          <li><strong>Email:</strong> {{ email }}</li>
+          <li><strong>Tipo de paseo:</strong> {{ tipoPaseo }}</li>
+          <li><strong>Fecha:</strong> {{ fecha }}</li>
+          <li><strong>Hora:</strong> {{ hora }}</li>
+        </ul>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Corregir datos
+        </button>
+        <button type="button" class="btn btn-warning fw-bold"
+                data-bs-dismiss="modal"
+                (click)="hacerReserva()">
+          Sí, confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
