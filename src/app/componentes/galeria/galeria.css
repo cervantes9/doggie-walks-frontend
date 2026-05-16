@@ -1,6 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    min-height: 100%;
+}
+
+
 .galeria-seccion {
   padding: 40px 60px;
   background-color: #f8f9fa;
+  flex-grow: 1;
+  min-height: 100%;
 }
 
 .texto-titulo {

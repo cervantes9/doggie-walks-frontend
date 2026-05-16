@@ -25,7 +25,16 @@
               <span class="precio-destacado fw-bold fs-5">$ 1500</span>
             </div>
           </div>
-        </div>
+
+          <div class="d-grid mt-3">
+          <a routerLink="/reservas" 
+              [queryParams]="{tipoPaseo: 'Paseo Corto'}" 
+              class="btn btn-warning fw-bold">
+                Reservar Paseo Corto 🐾
+              </a>
+            </div>
+          </div>
+        
       </div>
 
       <!-- TARJETA 2: PASEO LARGO -->
@@ -43,6 +52,15 @@
               <span class="precio-destacado fw-bold fs-5">$ 2500</span>
             </div>
           </div>
+
+          <div class="d-grid mt-3">
+    <a routerLink="/reservas" 
+       [queryParams]="{tipoPaseo: 'Paseo Largo'}" 
+       class="btn btn-warning fw-bold">
+      Reservar Paseo Largo 🐾
+    </a>
+  </div>
+
         </div>
       </div>
 
@@ -61,6 +79,13 @@
               <span class="precio-destacado fw-bold fs-5">$ 3000</span>
             </div>
           </div>
+          <div class="d-grid mt-3">
+            <a routerLink="/reservas"
+            [queryParams]="{tipoPaseo: 'Paseo VIP'}"
+                  class="btn btn-warning fw-bold">
+                Reservar Paseo Vip 🐾
+                    </a>
+              </div>
         </div>
       </div>
 

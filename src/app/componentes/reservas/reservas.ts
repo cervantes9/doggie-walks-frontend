@@ -1,8 +1,10 @@
-import { Component, inject, ChangeDetectorRef  } from '@angular/core';
+import { Component, inject, ChangeDetectorRef, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-reservas',
@@ -10,11 +12,12 @@ import { Router } from '@angular/router';
   templateUrl: './reservas.html',
   styleUrl: './reservas.css',
 })
-export class Reservas {
+export class Reservas implements OnInit {
 
   private http = inject(HttpClient);
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
+  private route = inject(ActivatedRoute);
 
   listaPaseadores$ = this.http.get<any[]>('http://localhost:8080/api/paseadores');
 
@@ -32,6 +35,15 @@ export class Reservas {
   mensajeError: string = '';
   mensajeErrorBackend: string = '';
   mostrarModal: boolean = false;
+
+  ngOnInit() {
+  this.route.queryParams.subscribe(params => {
+    if (params['tipoPaseo']) {
+      this.tipoPaseo = params['tipoPaseo'];
+    }
+  });
+}
+
 
   hacerReserva() {
 
