@@ -106,12 +106,12 @@
               </div>
 
               <div class="d-grid">
-               <button type="button" 
-                  class="btn btn-warning btn-lg fw-bold"
-                   (click)="validarYMostrarModal()"
-                    [disabled]="enviando">
-                      Confirmar Reserva 🐾
-                </button>
+              <button type="button"
+        class="btn btn-warning btn-lg fw-bold"
+        (click)="validarYMostrarModal()"
+        [disabled]="enviando">
+                Confirmar Reserva 🐾
+</button>
               </div>
 
             </form>
@@ -122,15 +122,15 @@
 
   </div>
 
-  <div class="modal fade" id="modalConfirmacion" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow-lg">
-      <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold">¿Confirmar reserva?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  @if (mostrarModal) {
+  <div class="modal-overlay" (click)="cerrarModal()">
+    <div class="modal-caja" (click)="$event.stopPropagation()">
+      <div class="modal-encabezado">
+        <h5 class="fw-bold mb-0">¿Confirmar reserva?</h5>
+        <button type="button" class="btn-close" (click)="cerrarModal()"></button>
       </div>
-      <div class="modal-body">
-        <p class="text-muted">Por favor verifica que tus datos sean correctos antes de confirmar:</p>
+      <div class="modal-cuerpo">
+        <p class="text-muted">Por favor verifica que tus datos sean correctos:</p>
         <ul class="list-unstyled">
           <li><strong>Nombre:</strong> {{ nombreCliente }}</li>
           <li><strong>Email:</strong> {{ email }}</li>
@@ -138,19 +138,21 @@
           <li><strong>Fecha:</strong> {{ fecha }}</li>
           <li><strong>Hora:</strong> {{ hora }}</li>
         </ul>
+        @if (mensajeErrorBackend) {
+          <div class="alert alert-danger mt-3">{{ mensajeErrorBackend }}</div>
+        }
       </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+      <div class="modal-pie">
+        <button type="button" class="btn btn-outline-secondary" (click)="cerrarModal()">
           Corregir datos
         </button>
-        <button type="button" class="btn btn-warning fw-bold"
-                data-bs-dismiss="modal"
-                (click)="hacerReserva()">
+        <button type="button" class="btn btn-warning fw-bold" (click)="hacerReserva()">
           Sí, confirmar
         </button>
       </div>
     </div>
   </div>
-</div>
+}
+
 
 </section>
