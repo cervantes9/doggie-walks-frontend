@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 export class Galeria {
 
   // La lista de fotos con su id, url y descripción
-  fotos = [
-    { id: 0, url: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800', alt: 'Perrito en paseo' },
-    { id: 1, url: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=800', alt: 'Perrito feliz' },
-    { id: 2, url: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=800', alt: 'Perrito jugando' },
-    { id: 3, url: 'https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=800', alt: 'Perrito corriendo' },
-    { id: 4, url: 'https://images.unsplash.com/photo-1568572933382-74d440642117?w=800', alt: 'Perrito descansando' },
-    { id: 5, url: 'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=800', alt: 'Perrito en parque' },
-  ];
+ fotos = [
+  { id: 0, url: 'https://images.pexels.com/photos/7210271/pexels-photo-7210271.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Paseador con perros en el parque' },
+  { id: 1, url: 'https://images.pexels.com/photos/16565503/pexels-photo-16565503.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Perro siendo entrenado' },
+  { id: 2, url: 'https://images.pexels.com/photos/33710378/pexels-photo-33710378.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Paseadora jugando con perro' },
+  { id: 3, url: 'https://images.pexels.com/photos/14116508/pexels-photo-14116508.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Perro feliz en paseo' },
+  { id: 4, url: 'https://images.pexels.com/photos/22236325/pexels-photo-22236325.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Entrenamiento canino' },
+  { id: 5, url: 'https://images.pexels.com/photos/7210693/pexels-photo-7210693.jpeg?auto=compress&cs=tinysrgb&w=800', alt: 'Paseo en el parque' },
+];
 
   // -1 significa que no hay foto seleccionada y el modal está cerrado
   fotoSeleccionada: number = -1;

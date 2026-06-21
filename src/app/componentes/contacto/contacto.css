@@ -11,7 +11,7 @@
 }
 
 .titulo-oscuro {
-    color: #2c4c3b; /* Verde corporativo */
+    color: var(--negro);
 }
 
 .info-contacto {

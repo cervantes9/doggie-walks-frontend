@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --verde-oscuro: #2c4c3b;
+    --marron:       #bc6c25;
+    --crema:        #fefae0;
+    --blanco:       #ffffff;
+    --negro:        #212529;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+}

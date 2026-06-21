@@ -13,7 +13,7 @@
 
 /* --- 2. TÍTULOS --- */
 .texto-titulo {
-    color: #2c4c3b; /* Verde corporativo */
+    color: var(--negro);
     font-weight: 700;
     text-align: center;
     margin-bottom: 10px;

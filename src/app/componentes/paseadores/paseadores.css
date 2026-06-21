@@ -10,6 +10,12 @@
     flex-grow: 1;
 }
 
+.ver-perfil {
+    color: var(--marron);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
 .titulo-oscuro {
     color: #212529;
 }

@@ -1,57 +1,86 @@
-/* --- 1. ARREGLO DEL SCROLL GLOBAL --- */
-/* NOTA: Para que esto funcione perfecto, asegúrate de pegar esta regla también en tu archivo global "src/styles.css" */
+/* --- 1. SCROLL GLOBAL --- */
 body, html {
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
 }
 
-/* --- 2. DISEÑO DE LA BARRA DE NAVEGACIÓN --- */
-
+/* --- 2. NAVBAR --- */
 .navbar-doggie {
-    background-color: #2c4c3b; 
-    padding: 15px 0; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    background-color: var(--verde-oscuro);
+    padding: 8px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.navbar-brand {
-    font-family: 'Nunito', 'Segoe UI', sans-serif; 
+.navbar-doggie .navbar-brand {
     font-weight: 800;
     font-size: 1.5rem;
-    color: #ffffff !important;
-    letter-spacing: 1px; 
+    color: var(--crema);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-.nav-link {
-    color: #fefae0 !important; 
+.navbar-doggie .navbar-brand:hover {
+    color: var(--marron);
+}
+
+.navbar-doggie .nav-link {
+    color: var(--crema);
     font-weight: 600;
     font-size: 1.1rem;
-    margin: 0 10px; 
-    transition: all 0.3s ease; 
+    margin: 0 10px;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #bc6c25 !important; 
-    transform: translateY(-2px); 
+.navbar-doggie .nav-link:hover {
+    color: var(--marron);
+    transform: translateY(-2px);
 }
 
-/* --- 3. DISEÑO DEL FOOTER --- */
+/* --- 3. FOOTER --- */
 .footer-doggie {
-    background-color: #2c4c3b; 
-    color: #fefae0; 
-    border-top: 5px solid #bc6c25; 
+    background-color: var(--verde-oscuro);
+    color: var(--crema);
+    border-top: 5px solid var(--marron);
 }
 
 .footer-link {
-    color: #fefae0;
+    color: var(--crema);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-link:hover {
-    color: #bc6c25;
+    color: var(--marron);
 }
 
 .copyright-bar {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1600px) and (max-height: 900px) {
+
+    .navbar-doggie {
+        padding: 8px 0;
+    }
+
+    .footer-doggie .container {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .footer-doggie h5 {
+        margin-bottom: 0.5rem !important;
+        font-size: 1rem;
+    }
+
+    .footer-doggie p,
+    .footer-doggie li {
+        margin-bottom: 0.25rem;
+        line-height: 1.2;
+        font-size: 0.9rem;
+    }
+
+    .copyright-bar {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
 }

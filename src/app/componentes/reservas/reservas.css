@@ -5,7 +5,7 @@
 }
 
 .titulo-verde {
-  color: #2c7a4b;
+  color: var(--negro);
 }
 
 .card {
