@@ -46,15 +46,16 @@
 /* La pregunta (cerrada) */
 .accordion-button {
     font-weight: 600;
-    color: #212529;
+    color: var(--negro);
     padding: 20px;
+    font-size: 1.1rem;
 }
 
 /* LA PREGUNTA (ABIERTA) - Aquí matamos el azul */
 .accordion-button:not(.collapsed) {
-    color: #2c4c3b; /* Texto Verde oscuro corporativo */
-    background-color: #f0f4f2; /* Fondo verde MUY pastel/grisáceo */
-    box-shadow: none; /* Quita la sombra azul intensa de Bootstrap */
+    color: var(--marron);        /* Texto marrón corporativo (acento) */
+    background-color: #fdf7ef;   /* Crema muy suave en vez de verde */
+    box-shadow: none;
 }
 
 /* Quitar el borde azul feo que sale al hacer clic (focus) */
@@ -65,8 +66,9 @@
 
 /* El texto de la respuesta */
 .accordion-body {
-    color: #555;
-    line-height: 1.6;
+    color: #444;
+    line-height: 1.7;
     padding: 20px;
-    border-top: 1px solid #f0f4f2; /* Línea separadora sutil */
+    font-size: 1.05rem;
+    border-top: 1px solid #f0e9df;
 }

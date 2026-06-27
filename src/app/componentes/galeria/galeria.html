@@ -13,6 +13,10 @@
       }
     </div>
 
+     <div class="text-center mt-4">
+      <button class="btn-volver-arriba" (click)="volverArriba()">↑ Volver arriba</button>
+    </div>
+
     @if (fotoSeleccionada !== -1) {
       <div class="modal-fondo" (click)="cerrarFoto()">
         <button class="flecha flecha-izquierda" (click)="$event.stopPropagation(); fotoAnterior()">❮</button>
