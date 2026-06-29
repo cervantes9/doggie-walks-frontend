@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contacto',
@@ -35,7 +36,7 @@ export class Contacto {
     };
 
     // POST al backend, igual que @PostMapping en Spring Boot
-    this.http.post('http://localhost:8080/api/mensajes_contacto', datos)
+    this.http.post(`${environment.apiUrl}/api/mensajes_contacto`, datos)
       .subscribe({
         next: () => {
           this.mensajeExito = '¡Mensaje enviado! Te contactaremos pronto.';

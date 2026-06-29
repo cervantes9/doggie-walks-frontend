@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-servicios',
@@ -15,7 +16,7 @@ export class Servicios {
   private http = inject(HttpClient);
   private sanitizer = inject(DomSanitizer);
 
-  listaServicios$ = this.http.get<any[]>('http://localhost:8080/api/servicios');
+  listaServicios$ = this.http.get<any[]>(`${environment.apiUrl}/api/servicios`);
 
   videoSeleccionado: SafeResourceUrl | null = null;
 

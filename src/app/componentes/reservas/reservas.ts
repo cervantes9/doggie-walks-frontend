@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -62,7 +63,7 @@ export class Reservas implements OnInit {
     idPaseador: this.idPaseador
   };
 
-  this.http.post('http://localhost:8080/api/reservas', datos)
+  this.http.post(`${environment.apiUrl}/api/reservas`, datos)
     .subscribe({
       next: () => {
   // Primero cerramos el modal
