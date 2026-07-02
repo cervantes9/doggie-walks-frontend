@@ -10,9 +10,7 @@
       @for (paseador of listaPaseadores$ | async; track paseador.id) {
 
         <div class="col-md-5 col-lg-4">
-          <div class="card h-100 shadow-sm border-0 tarjeta-equipo text-center cursor-pointer"
-               data-bs-toggle="modal"
-               [attr.data-bs-target]="'#modalPaseador' + paseador.id">
+          <div class="card h-100 shadow-sm border-0 tarjeta-equipo text-center">
 
             <div class="mt-4">
               <img [src]="paseador.fotoUrl"
@@ -29,8 +27,12 @@
             </div>
 
             <div class="card-footer bg-white border-0 pb-4">
-              <span class="ver-perfil">Ver perfil completo ➝</span>
-            </div>
+                <button type="button" class="btn btn-outline-warning fw-bold btn-sm"
+                  data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#modalPaseador' + paseador.id">
+                          Ver perfil completo ➝
+                  </button>
+                </div>
           </div>
         </div>
 
@@ -54,10 +56,11 @@
 
                 <div class="d-grid mt-4">
                   <button class="btn btn-warning fw-bold" 
-                          data-bs-dismiss="modal" 
-                          routerLink="/reservas">
-                    Reservar un paseo 🐾
-                  </button>
+                        data-bs-dismiss="modal" 
+                      routerLink="/reservas"
+                    [queryParams]="{ idPaseador: paseador.id }">
+                  Reservar un paseo 🐾
+                    </button>
                 </div>
               </div>
 

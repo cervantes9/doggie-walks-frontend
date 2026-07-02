@@ -4,6 +4,7 @@
     --crema:        #fefae0;
     --blanco:       #ffffff;
     --negro:        #212529;
+    --boton-accion: #f5a623; /* color de los botones de acción */
 }
 
 * {
@@ -12,4 +13,39 @@
 
 body {
     font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+/* === Botones de acción unificados en todo el sitio === */
+.btn-warning {
+    --bs-btn-bg: var(--boton-accion);
+    --bs-btn-border-color: var(--boton-accion);
+    --bs-btn-hover-bg: var(--boton-accion);
+    --bs-btn-hover-border-color: var(--boton-accion);
+    --bs-btn-active-bg: var(--boton-accion);
+    --bs-btn-active-border-color: var(--boton-accion);
+    --bs-btn-color: var(--negro);
+    --bs-btn-hover-color: var(--negro);
+    --bs-btn-active-color: var(--negro);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-warning:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+}
+
+/* Botón "de borde" (outline) del mismo color, para acciones secundarias */
+.btn-outline-warning {
+    --bs-btn-color: var(--negro);
+    --bs-btn-border-color: var(--boton-accion);
+    --bs-btn-hover-bg: var(--boton-accion);
+    --bs-btn-hover-border-color: var(--boton-accion);
+    --bs-btn-hover-color: var(--negro);
+    --bs-btn-active-bg: var(--boton-accion);
+    --bs-btn-active-border-color: var(--boton-accion);
+    --bs-btn-active-color: var(--negro);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-outline-warning:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
 }

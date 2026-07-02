@@ -20,7 +20,7 @@ export class Reservas implements OnInit {
   private cdr = inject(ChangeDetectorRef);
   private route = inject(ActivatedRoute);
 
-  listaPaseadores$ = this.http.get<any[]>('http://localhost:8080/api/paseadores');
+  listaPaseadores$ = this.http.get<any[]>(`${environment.apiUrl}/api/paseadores`);
 
   nombreCliente: string = '';
   email: string = '';
@@ -38,12 +38,15 @@ export class Reservas implements OnInit {
   mostrarModal: boolean = false;
 
   ngOnInit() {
-  this.route.queryParams.subscribe(params => {
-    if (params['tipoPaseo']) {
-      this.tipoPaseo = params['tipoPaseo'];
-    }
-  });
-}
+    this.route.queryParams.subscribe(params => {
+      if (params['tipoPaseo']) {
+        this.tipoPaseo = params['tipoPaseo'];
+      }
+      if (params['idPaseador']) {
+        this.idPaseador = Number(params['idPaseador']);
+      }
+    });
+  }
 
 
   hacerReserva() {

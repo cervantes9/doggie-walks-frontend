@@ -30,7 +30,6 @@
 }
 
 .btn-warning {
-  background-color: #f5a623;
   border: none;
   border-radius: 8px;
   padding: 14px;
@@ -39,7 +38,6 @@
 }
 
 .btn-warning:hover {
-  background-color: #e09415;
   transform: translateY(-2px);
 }
 

@@ -26,8 +26,8 @@
 
 /* El botón principal de "Enviar Mensaje" */
 .btn-doggie {
-    background-color: #2c4c3b;
-    color: #ffffff;
+    background-color: var(--boton-accion);
+    color: var(--negro);
     border: none;
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -35,8 +35,8 @@
 
 /* Efecto al pasar el ratón por el botón Enviar */
 .btn-doggie:hover {
-    background-color: #bc6c25; /* Cambia a marrón arcilla */
-    color: #ffffff;
+    filter: brightness(0.92);
+    color: var(--negro);
 }
 
 /* Color de los circulitos de los iconos */
@@ -72,6 +72,6 @@
 
 /* Efecto al hacer clic para escribir (borde verde en vez de azul) */
 .form-control:focus {
-    border-color: #2c4c3b; 
-    box-shadow: 0 0 0 0.25rem rgba(44, 76, 59, 0.15); /* Sombrilla verde suave */
+    border-color: var(--marron);
+    box-shadow: 0 0 0 0.25rem rgba(188, 108, 37, 0.15);
 }

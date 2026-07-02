@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef   } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
@@ -13,6 +13,7 @@ export class Contacto {
 
   // Como el @Autowired de Spring Boot
   private http = inject(HttpClient);
+  private cdr = inject(ChangeDetectorRef);
 
   // Una variable por cada campo del formulario
   nombre: string = '';
@@ -26,6 +27,11 @@ export class Contacto {
 
   // Se ejecuta cuando el usuario hace click en Enviar
   enviarMensaje() {
+
+      if (!this.nombre)   { this.mensajeError = 'Por favor ingresa tu nombre completo.'; this.mensajeExito = ''; return; }
+      if (!this.telefono) { this.mensajeError = 'Por favor ingresa tu número de teléfono.'; this.mensajeExito = ''; return; }
+      if (!this.email)    { this.mensajeError = 'Por favor ingresa tu correo electrónico.'; this.mensajeExito = ''; return; }
+      if (!this.mensaje)  { this.mensajeError = 'Por favor escribe tu mensaje.'; this.mensajeExito = ''; return; }
 
     // Armamos el objeto con los datos, igual que el JSON que espera Spring Boot
     const datos = {
@@ -46,10 +52,12 @@ export class Contacto {
           this.telefono = '';
           this.email = '';
           this.mensaje = '';
+          this.cdr.detectChanges();
         },
         error: () => {
           this.mensajeError = 'Hubo un error al enviar el mensaje. Intenta de nuevo.';
           this.mensajeExito = '';
+          this.cdr.detectChanges();
         }
       });
   }

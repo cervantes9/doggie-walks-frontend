@@ -97,3 +97,9 @@
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+/* Excepción: en Servicios la tarjeta ya se mueve al pasar el mouse,
+   así que el botón no se levanta (evita que se vea la línea blanca de la tarjeta) */
+    .btn-warning:hover {
+    transform: none;
+}

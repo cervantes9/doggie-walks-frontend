@@ -10,7 +10,7 @@
     </div>
 
     <div class="row g-5">
-      
+
       <!-- Columna Izquierda: El Formulario -->
       <div class="col-lg-7">
         <div class="card shadow-sm border-0 tarjeta-contacto">
@@ -18,31 +18,37 @@
             <h4 class="mb-4 titulo-oscuro">Envíanos un mensaje</h4>
             
             <form>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="nombre" class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez" required>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="nombre" class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ej. Juan Pérez" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Ej. +54 9 342 123 4567" required>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="juan@ejemplo.com" required>
+  </div>
+
+      <div class="mb-4">
+        <label for="mensaje" class="form-label">¿En qué podemos ayudarte?</label>
+        <textarea class="form-control" id="mensaje" name="mensaje" [(ngModel)]="mensaje" rows="5" placeholder="Cuéntanos sobre tu mascota..." required></textarea>
+        </div>
+
+          @if (mensajeExito) {
+          <div class="alert alert-success">{{ mensajeExito }}</div>
+                      }
+            @if (mensajeError) {
+                <div class="alert alert-danger">{{ mensajeError }}</div>
+                }
+
+                  <div class="d-grid">
+                  <button type="button" class="btn btn-warning btn-lg fw-bold" (click)="enviarMensaje()">Enviar Mensaje</button>
                 </div>
-                <div class="col-md-6 mb-3">
-                  <label for="telefono" class="form-label">Teléfono</label>
-                  <input type="tel" class="form-control" id="telefono" placeholder="Ej. +54 9 11 1234 5678" required>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="juan@ejemplo.com" required>
-              </div>
-
-              <div class="mb-4">
-                <label for="mensaje" class="form-label">¿En qué podemos ayudarte?</label>
-                <textarea class="form-control" id="mensaje" rows="5" placeholder="Cuéntanos sobre tu mascota..." required></textarea>
-              </div>
-
-              <div class="d-grid">
-                <!-- Botón personalizado -->
-                <button type="button" class="btn btn-doggie btn-lg fw-bold">Enviar Mensaje</button>
-              </div>
             </form>
 
           </div>
@@ -60,7 +66,7 @@
             </div>
             <div>
               <h6 class="fw-bold mb-1">Área de Servicio</h6>
-              <p class="text-muted mb-0">Ciudad Autónoma de Buenos Aires y alrededores.</p>
+              <p class="text-muted mb-0">Santa Fe Capital y alrededores.</p>
             </div>
           </div>
 
@@ -70,7 +76,7 @@
             </div>
             <div>
               <h6 class="fw-bold mb-1">Llámanos</h6>
-              <p class="text-muted mb-0">+54 9 11 9876 5432</p>
+              <p class="text-muted mb-0">+54 9 342 987 6543</p>
             </div>
           </div>
 

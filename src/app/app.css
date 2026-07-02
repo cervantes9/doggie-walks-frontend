@@ -20,6 +20,7 @@ body, html {
 
 .navbar-doggie .navbar-brand:hover {
     color: var(--marron);
+    transform: translateY(-2px);
 }
 
 .navbar-doggie .nav-link {
@@ -45,11 +46,13 @@ body, html {
 .footer-link {
     color: var(--crema);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
 }
 
 .footer-link:hover {
     color: var(--marron);
+    transform: translateY(-2px);
 }
 
 .copyright-bar {
