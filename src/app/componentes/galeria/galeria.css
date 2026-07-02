@@ -166,3 +166,17 @@
   background-color: var(--marron);
   transform: translateY(-3px);
 }
+
+/* Tablet: 2 columnas */
+@media (max-width: 992px) {
+  .cuadricula-fotos {
+    columns: 2;
+  }
+}
+
+/* Móvil: 1 columna (fotos grandes, como en Servicios) */
+@media (max-width: 576px) {
+  .cuadricula-fotos {
+    columns: 1;
+  }
+}
