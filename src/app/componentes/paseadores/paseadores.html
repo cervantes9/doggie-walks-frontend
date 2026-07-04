@@ -20,14 +20,14 @@
 
             <div class="card-body">
               <h4 class="card-title fw-bold titulo-oscuro mb-1">{{ paseador.nombre }}</h4>
-              <p class="text-success fw-semibold mb-3">
-                <small>⭐ {{ paseador.experienciaAnos }} años de experiencia</small>
-              </p>
+              <p class="fw-semibold mb-3" style="color: var(--verde-oscuro);">
+                  <small>⭐ {{ paseador.experienciaAnos }} años de experiencia</small>
+                </p>
               <p class="card-text text-muted line-clamp-2">{{ paseador.descripcionPerfil }}</p>
             </div>
 
             <div class="card-footer bg-white border-0 pb-4">
-                <button type="button" class="btn btn-outline-warning fw-bold btn-sm"
+                <button type="button" class="btn btn-outline-verde fw-bold btn-sm"
                   data-bs-toggle="modal"
                     [attr.data-bs-target]="'#modalPaseador' + paseador.id">
                           Ver perfil completo ➝
@@ -51,7 +51,7 @@
                      [alt]="paseador.nombre">
 
                 <h3 class="fw-bold titulo-oscuro">{{ paseador.nombre }}</h3>
-                <span class="badge bg-success mb-3 p-2">{{ paseador.certificaciones }}</span>
+                <span class="badge text-white mb-3 p-2" style="background-color: var(--verde-oscuro);">{{ paseador.certificaciones }}</span>
                 <p class="text-muted text-start mt-3">{{ paseador.bioMarketing }}</p>
 
                 <div class="d-grid mt-4">

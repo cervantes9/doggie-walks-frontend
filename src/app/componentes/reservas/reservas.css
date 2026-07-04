@@ -20,8 +20,8 @@
 }
 
 .form-control:focus, .form-select:focus {
-  border-color: #2c7a4b;
-  box-shadow: 0 0 0 0.25rem rgba(44, 122, 75, 0.15);
+  border-color: var(--marron);
+  box-shadow: 0 0 0 0.25rem rgba(188, 108, 37, 0.15);
 }
 
 .form-label {

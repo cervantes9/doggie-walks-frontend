@@ -5,18 +5,24 @@
 
         <div class="card shadow-sm border-0 p-5">
           <div class="mb-4">
-            <span style="font-size: 5rem;">🐾</span>
+            <svg class="pata-confirmacion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+              <ellipse cx="50" cy="62" rx="22" ry="18"/>
+              <ellipse cx="26" cy="42" rx="9" ry="12" transform="rotate(-15 26 42)"/>
+              <ellipse cx="40" cy="34" rx="9" ry="12" transform="rotate(-5 40 34)"/>
+              <ellipse cx="60" cy="34" rx="9" ry="12" transform="rotate(5 60 34)"/>
+              <ellipse cx="74" cy="42" rx="9" ry="12" transform="rotate(15 74 42)"/>
+              </svg>
           </div>
-          <h2 class="fw-bold text-success mb-3">¡Reserva Confirmada!</h2>
+          <h2 class="fw-bold mb-3" style="color: var(--verde-oscuro);">¡Reserva Confirmada!</h2>
           <p class="text-muted mb-4">
-            Gracias por confiar en Doggie Walks. Nos pondremos en contacto contigo 
+            Gracias por confiar en Doggie Walks. Nos pondremos en contacto contigo
             a la brevedad para confirmar los detalles de tu paseo.
           </p>
           <div class="d-grid gap-2">
             <a routerLink="/reservas" class="btn btn-warning fw-bold">
               Hacer otra reserva
             </a>
-            <a routerLink="/" class="btn btn-outline-secondary">
+            <a routerLink="/" class="btn btn-outline-verde">
               Volver al inicio
             </a>
           </div>

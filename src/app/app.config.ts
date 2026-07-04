@@ -1,14 +1,4 @@
-/*import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
-  ]
-};*/
 // Este el panel de control o configuración global osea app.config.ts
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 //importa de angular  tipos de datos y captura de errores

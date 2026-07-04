@@ -49,3 +49,20 @@ body {
     filter: brightness(1.12);
     transform: translateY(-2px);
 }
+
+/* Botón de borde verde (acción secundaria) */
+.btn-outline-verde {
+    --bs-btn-color: var(--verde-oscuro);
+    --bs-btn-border-color: var(--verde-oscuro);
+    --bs-btn-bg: transparent;
+    --bs-btn-hover-bg: var(--verde-oscuro);
+    --bs-btn-hover-border-color: var(--verde-oscuro);
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-active-bg: var(--verde-oscuro);
+    --bs-btn-active-border-color: var(--verde-oscuro);
+    --bs-btn-active-color: #ffffff;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-outline-verde:hover {
+    transform: translateY(-2px);
+}
