@@ -114,7 +114,7 @@ this.enviando = false; // Resetear siempre antes de abrir el modal
   this.mensajeError = '';
   this.mensajeErrorBackend = '';
   this.enviando = false;
-  this.mostrarModal = true; // 👈 esta línea abre el modal
+  this.mostrarModal = true; // abre el modal de confirmación
 }
 
 cerrarModal() {

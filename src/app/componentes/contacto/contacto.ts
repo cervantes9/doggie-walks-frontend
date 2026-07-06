@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 })
 export class Contacto {
 
-  // Como el @Autowired de Spring Boot
+  // Dependencias inyectadas
   private http = inject(HttpClient);
   private cdr = inject(ChangeDetectorRef);
 
@@ -33,7 +33,7 @@ export class Contacto {
       if (!this.email)    { this.mensajeError = 'Por favor ingresa tu correo electrónico.'; this.mensajeExito = ''; return; }
       if (!this.mensaje)  { this.mensajeError = 'Por favor escribe tu mensaje.'; this.mensajeExito = ''; return; }
 
-    // Armamos el objeto con los datos, igual que el JSON que espera Spring Boot
+    // Cuerpo de la petición con los datos del formulario
     const datos = {
       nombreCliente: this.nombre,
       telefono: this.telefono,
@@ -41,7 +41,7 @@ export class Contacto {
       mensaje: this.mensaje
     };
 
-    // POST al backend, igual que @PostMapping en Spring Boot
+    // Envía el mensaje al backend
     this.http.post(`${environment.apiUrl}/api/mensajes_contacto`, datos)
       .subscribe({
         next: () => {
